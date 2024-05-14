@@ -10,6 +10,10 @@ const App = createBrowserRouter([
     element: <Home />,
   },
   {
+    path: "/home",
+    element: <Home />,
+  },
+  {
     element: <Layouts />,
     children: [
       {

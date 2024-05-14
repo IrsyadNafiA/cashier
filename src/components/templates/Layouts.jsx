@@ -6,7 +6,9 @@ const Layouts = () => {
   return (
     <React.Fragment>
       <Navbar />
-      <Outlet />
+      <div className="p-4">
+        <Outlet />
+      </div>
     </React.Fragment>
   );
 };

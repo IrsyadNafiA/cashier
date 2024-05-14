@@ -2,9 +2,11 @@ import Navbar from "../components/templates/Navbar";
 
 const Home = () => {
   return (
-    <div>
+    <div className="">
       <Navbar />
-      <p>Selamat datang di Cashier</p>
+      <div className="p-4">
+        <p>Selamat datang di Cashier</p>
+      </div>
     </div>
   );
 };
