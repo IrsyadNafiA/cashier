@@ -3,6 +3,8 @@ import Home from "./pages/Home";
 import Layouts from "./components/templates/Layouts";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import Login from "./pages/Auth";
+import Register from "./pages/Auth/Register";
 
 const App = createBrowserRouter([
   {
@@ -12,6 +14,14 @@ const App = createBrowserRouter([
   {
     path: "/home",
     element: <Home />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
   {
     element: <Layouts />,
