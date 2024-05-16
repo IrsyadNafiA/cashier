@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Login from "./pages/Auth";
 import Register from "./pages/Auth/Register";
 import Dashboard from "./pages/Dashboard";
+import TestingForm from "./pages/testingForm";
 
 const App = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const App = createBrowserRouter([
         element: <Dashboard />,
       },
     ],
+  },
+  {
+    path: "/testingform",
+    element: <TestingForm />,
   },
 ]);
 
