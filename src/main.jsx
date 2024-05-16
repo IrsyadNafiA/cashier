@@ -4,10 +4,13 @@ import App from "./App.jsx";
 import { onLCP, onINP, onCLS } from "web-vitals";
 import { RouterProvider } from "react-router-dom";
 import "./index.css";
+import { AuthProvider } from "./pages/Auth/AuthContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={App} />
+    <AuthProvider>
+      <RouterProvider router={App} />
+    </AuthProvider>
   </React.StrictMode>
 );
 

@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import List from "./List";
+import { AuthContext } from "../../../pages/Auth/AuthContext";
+import { useContext } from "react";
 
 const Navbar = () => {
   const links = ["home", "about", "contact"];
+
+  const { isLoggedIn, logout } = useContext(AuthContext);
 
   return (
     <nav className="w-full">
@@ -16,10 +20,21 @@ const Navbar = () => {
               <List key={index} href={link} style="hover:text-white" />
             ))}
           </div>
-          <List
-            href={`login`}
-            style="py-2 px-4 border border-black rounded-md hover:text-white hover:border-white"
-          />
+          {isLoggedIn ? (
+            <div className="flex gap-2">
+              <List href="dashboard" style="hover:text-white" />
+              <button onClick={logout} className="hover:text-white">
+                Logout
+              </button>
+            </div>
+          ) : (
+            <>
+              <List
+                href={`login`}
+                style="py-2 px-4 border border-black rounded-md hover:text-white hover:border-white"
+              />
+            </>
+          )}
         </div>
       </ul>
     </nav>

@@ -5,6 +5,7 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Login from "./pages/Auth";
 import Register from "./pages/Auth/Register";
+import Dashboard from "./pages/Dashboard";
 
 const App = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const App = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
       },
     ],
   },
