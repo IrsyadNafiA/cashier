@@ -4,8 +4,18 @@ import { useFormContext } from "react-hook-form";
 import { MdError } from "react-icons/md";
 import { findInputError } from "./findInputError";
 import { isFormInvalid } from "./isFormInvalid";
+import classNames from "classnames";
 
-export const Input = ({ label, type, id, placeholder, validation, name }) => {
+export const Input = ({
+  label,
+  type,
+  id,
+  placeholder,
+  validation,
+  name,
+  multiline,
+  className,
+}) => {
   const {
     register,
     formState: { errors },
@@ -13,9 +23,11 @@ export const Input = ({ label, type, id, placeholder, validation, name }) => {
 
   const inputError = findInputError(errors, name);
   const isInvalid = isFormInvalid(inputError);
+  const input_tailwind =
+    "p-5 font-medium rounded-md w-full border border-slate-300 placeholder:opacity-60";
 
   return (
-    <div className="flex flex-col w-full gap-2">
+    <div className={classNames("flex flex-col w-full gap-2", className)}>
       <div className="flex justify-between">
         <label htmlFor={id} className="font-semibold capitalize">
           {label}
@@ -29,13 +41,26 @@ export const Input = ({ label, type, id, placeholder, validation, name }) => {
           )}
         </AnimatePresence>
       </div>
-      <input
-        id={id}
-        type={type}
-        className="w-full p-5 font-medium border rounded-md border-slate-300 placeholder:opacity-60"
-        placeholder={placeholder}
-        {...register(name, validation)}
-      />
+      {multiline ? (
+        <textarea
+          id={id}
+          type={type}
+          className={classNames(
+            input_tailwind,
+            "min-h-[10rem] max-h-[20rem] resize-y"
+          )}
+          placeholder={placeholder}
+          {...register(`${name}`, validation)}
+        ></textarea>
+      ) : (
+        <input
+          id={id}
+          type={type}
+          className={classNames(input_tailwind)}
+          placeholder={placeholder}
+          {...register(name, validation)}
+        />
+      )}
     </div>
   );
 };
@@ -66,6 +91,8 @@ Input.propTypes = {
   id: PropTypes.string,
   validation: PropTypes.object,
   name: PropTypes.string,
+  multiline: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 InputError.propTypes = {

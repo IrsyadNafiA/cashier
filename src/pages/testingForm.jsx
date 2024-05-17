@@ -3,8 +3,10 @@ import { Input } from "../components/utilities/Forms";
 import { GrMail } from "react-icons/gr";
 import {
   PasswordValidation,
+  TextareaValidation,
   UsernameValidation,
 } from "../components/utilities/inputValidation";
+
 function TestingForm() {
   const methods = useForm();
 
@@ -23,6 +25,11 @@ function TestingForm() {
         <div className="grid gap-5 md:grid-cols-2">
           <Input {...UsernameValidation} />
           <Input {...PasswordValidation} />
+          <Input
+            {...TextareaValidation}
+            className="md:col-span-2"
+            multiline={true}
+          />
         </div>
         <div className="mt-5">
           <button

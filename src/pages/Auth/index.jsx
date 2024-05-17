@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { useForm, FormProvider } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { users } from "../../api/Users";
 import { AuthContext } from "./AuthContext";
@@ -36,6 +36,7 @@ const Login = () => {
   return (
     <div className="bg-lime-400 w-full h-screen flex flex-col justify-center items-center">
       <h1 className="text-3xl font-bold">LOGIN</h1>
+      <FormProvider></FormProvider>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control">
           <label>Email</label>
