@@ -26,16 +26,16 @@ const App = createBrowserRouter([
     element: <Register />,
   },
   {
+    path: "/contact",
+    element: <Contact />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+  {
     element: <Layouts />,
     children: [
-      {
-        path: "/contact",
-        element: <Contact />,
-      },
-      {
-        path: "/about",
-        element: <About />,
-      },
       {
         path: "/dashboard",
         element: <Dashboard />,

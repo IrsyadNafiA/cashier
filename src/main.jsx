@@ -14,6 +14,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   </React.StrictMode>
 );
 
-onCLS(console.log);
-onINP(console.log);
-onLCP(console.log);
+// onCLS(console.log);
+// onINP(console.log);
+// onLCP(console.log);

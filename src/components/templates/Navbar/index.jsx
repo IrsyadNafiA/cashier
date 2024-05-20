@@ -9,8 +9,8 @@ const Navbar = () => {
   const { isLoggedIn, logout } = useContext(AuthContext);
 
   return (
-    <nav className="w-full">
-      <ul className="p-4 flex bg-lime-400 justify-start gap-4 items-center">
+    <nav className="w-full shadow-md fixed z-[9999]">
+      <ul className="p-4 flex bg-primary text-secondary justify-start gap-4 items-center">
         <Link to={`/`} className="text-2xl font-bold">
           CASHIER
         </Link>

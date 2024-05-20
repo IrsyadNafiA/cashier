@@ -1,7 +1,12 @@
+import Navbar from "../components/templates/Navbar";
+
 const Contact = () => {
   return (
-    <div>
-      <p>Contact us!</p>
+    <div className="">
+      <Navbar />
+      <div className="p-4">
+        <p>Contact us</p>
+      </div>
     </div>
   );
 };

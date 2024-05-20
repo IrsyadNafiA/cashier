@@ -51,3 +51,21 @@ export const TextareaValidation = {
     },
   },
 };
+
+export const EmailValidation = {
+  name: "email",
+  label: "email",
+  type: "email",
+  id: "email",
+  placeholder: "write your email eg@eg.com",
+  validation: {
+    required: {
+      value: true,
+      message: "required",
+    },
+    pattern: {
+      value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
+      message: "Email is not valid.",
+    },
+  },
+};

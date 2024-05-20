@@ -14,6 +14,7 @@ const Dashboard = () => {
         setUser(JSON.parse(userData));
       }
     } else {
+      alert("Login dulu kau ppek");
       navigate("/login");
     }
   }, [isLoggedIn, navigate]);
@@ -26,8 +27,11 @@ const Dashboard = () => {
     return <div>Loading user data...</div>;
   }
 
+  console.log(user);
+
   return (
     <div>
+      <h1 className="text-3xl font-semibold mb-8">Dashboard</h1>
       <p>Selamat datang, {user.name}</p>
     </div>
   );
