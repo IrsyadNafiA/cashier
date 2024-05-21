@@ -1,15 +1,13 @@
 import React from "react";
-import Navbar from "./Navbar";
 import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 
 const Layouts = () => {
   return (
     <React.Fragment>
-      <Navbar />
-      <div className="flex gap-2">
+      <div className="flex">
         <Sidebar />
-        <div className="p-4 w-full pt-20 text-primary bg-secondary">
+        <div className="p-4 w-full text-primary bg-secondary h-screen">
           <Outlet />
         </div>
       </div>

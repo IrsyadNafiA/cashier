@@ -7,6 +7,8 @@ import Login from "./pages/Auth";
 import Register from "./pages/Auth/Register";
 import Dashboard from "./pages/Dashboard";
 import TestingForm from "./pages/testingForm";
+import Product from "./pages/Dashboard/Product";
+import Finance from "./pages/Dashboard/Finance";
 
 const App = createBrowserRouter([
   {
@@ -39,6 +41,14 @@ const App = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Dashboard />,
+      },
+      {
+        path: "/product/:pID",
+        element: <Product />,
+      },
+      {
+        path: "/finance/:fID",
+        element: <Finance />,
       },
     ],
   },

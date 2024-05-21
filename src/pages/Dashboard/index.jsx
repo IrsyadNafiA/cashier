@@ -27,11 +27,9 @@ const Dashboard = () => {
     return <div>Loading user data...</div>;
   }
 
-  console.log(user);
-
   return (
     <div>
-      <h1 className="text-3xl font-semibold mb-8">Dashboard</h1>
+      <h1 className="text-3xl font-semibold mb-4">Dashboard</h1>
       <p>Selamat datang, {user.name}</p>
     </div>
   );
