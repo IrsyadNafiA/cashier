@@ -13,7 +13,7 @@ import { TbLayoutDashboardFilled } from "react-icons/tb";
 import { MdProductionQuantityLimits } from "react-icons/md";
 import { FaMoneyBillTransfer } from "react-icons/fa6";
 import { FaAngleLeft } from "react-icons/fa6";
-import { IoMenu } from "react-icons/io5";
+import { RiSidebarUnfoldFill } from "react-icons/ri";
 
 // submenu
 import SubMenu from "./SubMenu";
@@ -70,7 +70,7 @@ const Sidebar = () => {
           },
         },
         closed: {
-          width: "5rem",
+          width: "4rem",
           transition: {
             damping: 40,
           },
@@ -102,14 +102,14 @@ const Sidebar = () => {
         variants={Sidebar_animation}
         initial={{ x: isTab ? -300 : 0 }}
         animate={isOpen ? "open" : "closed"}
-        className="h-screen bg-primary text-secondary flex flex-col gap-4 px-4 z-[999] w-[16rem] max-w-[16rem] pt-4 overflow-hidden md:relative fixed"
+        className="h-screen pt-20 bg-primary text-secondary flex flex-col gap-4 px-4 z-[999] w-[16rem] max-w-[16rem] overflow-hidden md:relative fixed"
       >
         {/* Logo */}
         <div className="flex items-center gap-4 border-b-2 border-secondary pb-4">
           <img
             src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/60/external-cashier-sales-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png"
             alt="Logo"
-            width={50}
+            width={40}
           />
           <span className="text-3xl font-semibold whitespace-pre">CASHIER</span>
         </div>
@@ -141,7 +141,7 @@ const Sidebar = () => {
           </ul>
 
           {/* second */}
-          {isOpen && (
+          {/* {isOpen && (
             <div className="flex-1 text-sm z-50 max-h-48 my-auto whitespace-pre w-full font-medium">
               <div className="flex items-center justify-between border-y-2 border-secondary p-4">
                 <div>
@@ -151,7 +151,7 @@ const Sidebar = () => {
                 <p>Upgrade</p>
               </div>
             </div>
-          )}
+          )} */}
         </div>
 
         {/* Controll button */}
@@ -164,7 +164,7 @@ const Sidebar = () => {
                   rotate: 0,
                 }
               : {
-                  x: -20,
+                  x: -4,
                   y: -200,
                   rotate: 180,
                 }
@@ -173,9 +173,9 @@ const Sidebar = () => {
             duration: 0,
           }}
           onClick={() => setIsOpen(!isOpen)}
-          className="absolute w-fit h-fit z-50 right-2 bottom-2 md:block hidden"
+          className="absolute w-fit h-fit z-50 right-4 bottom-2 md:block hidden"
         >
-          <FaAngleLeft size={28} />
+          <FaAngleLeft size={25} />
         </motion.button>
 
         {/* <a
@@ -187,10 +187,10 @@ const Sidebar = () => {
         </a> */}
       </motion.div>
       <div
-        className="md:hidden bg-secondary shadow-lg p-2 rounded-full absolute bottom-4 left-4"
+        className="md:hidden bg-secondary shadow-lg p-4 rounded-full absolute bottom-4 left-4"
         onClick={() => setIsOpen(true)}
       >
-        <IoMenu size={30} />
+        <RiSidebarUnfoldFill size={25} />
       </div>
     </div>
   );

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .link {
-  @apply flex items-center gap-6 hover:bg-indigo-900 rounded-md text-lg font-medium p-2.5 md:cursor-pointer cursor-default duration-300;
+  @apply flex items-center gap-6 hover:bg-indigo-900 rounded-md text-base font-medium py-2 px-0.5 md:cursor-pointer cursor-default duration-300;
 }
 
 .active {
