@@ -81,7 +81,7 @@ const Sidebar = () => {
     {
       name: "product",
       icon: MdProductionQuantityLimits,
-      menus: ["stock", "lorem"],
+      menus: ["stock", "cart"],
     },
     {
       name: "finance",
@@ -91,7 +91,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div>
+    <div className="h-screen">
       <div
         className={`md:hidden inset-0 z-[998] fixed max-h-screen bg-black/30 ${
           isOpen ? "block" : "hidden"
@@ -102,7 +102,7 @@ const Sidebar = () => {
         variants={Sidebar_animation}
         initial={{ x: isTab ? -300 : 0 }}
         animate={isOpen ? "open" : "closed"}
-        className="h-screen pt-20 bg-primary text-secondary flex flex-col gap-4 px-4 z-[999] w-[16rem] max-w-[16rem] overflow-hidden md:relative fixed"
+        className="h-full pt-20 bg-primary text-secondary flex flex-col gap-4 px-4 z-[999] w-[16rem] max-w-[16rem] overflow-hidden md:relative fixed"
       >
         {/* Logo */}
         <div className="flex items-center gap-4 border-b-2 border-secondary pb-4">

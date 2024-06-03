@@ -25,7 +25,7 @@ const Navbar = () => {
   }, [isTab]);
 
   return (
-    <nav className="w-full shadow-md fixed z-[9999]">
+    <nav className="w-full fixed z-[9999]">
       <div
         className={`md:hidden inset-0 z-[998] fixed max-h-screen bg-transparent ${
           isOpen ? "block" : "hidden"
@@ -52,27 +52,37 @@ const Navbar = () => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="absolute top-16 left-0 z-[99999] bg-primary/70 flex-col pb-2 md:pb-0 md:static md:flex md:flex-row md:bg-transparent md:h-full h-auto justify-between items-center w-full gap-2"
+              className="absolute top-16 left-0 z-[99999] bg-primary/70 flex-col pb-2 md:pb-0 md:static md:flex md:flex-row md:bg-transparent md:h-full h-auto justify-between items-center md:w-[55%] w-full gap-2"
             >
-              <div className="flex md:flex-row flex-col gap-2 h-full items-center">
+              <div className="flex md:flex-row flex-col md:gap-4 gap-2 h-full items-center">
                 {links.map((link, index) => (
-                  <List key={index} href={link} style="hover:text-white" />
+                  <List
+                    key={index}
+                    href={link}
+                    className="text-lg hover:text-yellow-300 font-medium"
+                  />
                 ))}
               </div>
               {isLoggedIn ? (
-                <div className="flex gap-2 md:flex md:flex-row flex-col items-center md:mt-0 mt-2">
-                  <List href="dashboard" style="hover:text-white" />
-                  <button onClick={logout} className="hover:text-white">
+                <div className="flex md:gap-4 gap-2 md:flex md:flex-row flex-col items-center md:mt-0 mt-2">
+                  <List
+                    href="dashboard"
+                    className="text-lg hover:text-yellow-300 font-medium"
+                  />
+                  <button
+                    onClick={logout}
+                    className="text-lg hover:text-yellow-300 font-medium"
+                  >
                     Logout
                   </button>
                 </div>
               ) : (
-                <>
+                <div className="flex md:gap-4 gap-2 md:flex md:flex-row flex-col items-center md:mt-0 mt-2">
                   <List
                     href="login"
-                    style="py-2 px-4 border border-black rounded-md hover:text-white hover:border-white"
+                    className="md:py-1.5 md:px-4 md:border-2 md:text-base text-lg font-medium md:border-secondary rounded-md hover:text-yellow-300 hover:border-yellow-300"
                   />
-                </>
+                </div>
               )}
             </motion.div>
           )}

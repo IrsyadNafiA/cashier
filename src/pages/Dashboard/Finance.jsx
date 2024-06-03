@@ -5,9 +5,9 @@ const Finance = () => {
 
   return (
     <div>
-      <h1>
+      <p className="breadcrumb">
         Finance / <span className="capitalize">{fID}</span>
-      </h1>
+      </p>
     </div>
   );
 };

@@ -10,6 +10,13 @@ import TestingForm from "./pages/testingForm";
 import Product from "./pages/Dashboard/Product";
 import Finance from "./pages/Dashboard/Finance";
 
+// Auth
+import withAuth from "./components/utilities/HOC/withAuth";
+
+const AuthenticatedDashboard = withAuth(Dashboard);
+const AuthenticatedProduct = withAuth(Product);
+const AuthenticatedFinance = withAuth(Finance);
+
 const App = createBrowserRouter([
   {
     path: "/",
@@ -40,15 +47,15 @@ const App = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-        element: <Dashboard />,
+        element: <AuthenticatedDashboard />,
       },
       {
         path: "/product/:pID",
-        element: <Product />,
+        element: <AuthenticatedProduct />,
       },
       {
         path: "/finance/:fID",
-        element: <Finance />,
+        element: <AuthenticatedFinance />,
       },
     ],
   },

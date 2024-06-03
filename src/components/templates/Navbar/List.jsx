@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
 
-const List = ({ href, style }) => {
+const List = ({ href, className }) => {
   return (
     <li>
-      <Link to={`/${href}`} className={`capitalize ${style}`}>
+      <Link to={`/${href}`} className={`capitalize ${className}`}>
         {href}
       </Link>
     </li>
@@ -13,7 +13,7 @@ const List = ({ href, style }) => {
 
 List.propTypes = {
   href: PropTypes.string.isRequired,
-  style: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 export default List;

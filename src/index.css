@@ -9,3 +9,11 @@
 .active {
   @apply bg-indigo-900 text-yellow-300;
 }
+
+.breadcrumb {
+  @apply text-sm text-gray-500;
+}
+
+.linear-background {
+  background: linear-gradient(163deg, #102c57 45.63%, #fde047 257.47%);
+}
